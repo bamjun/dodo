@@ -1,0 +1,17 @@
+
+
+def computepay(h,r):
+    if h > 40:
+        eji = (h * r) + ((h - 40) * r * 0.5)
+    else:
+        eji = (h * r)
+
+        
+    return eji
+
+hrs = input("Enter Hours:")
+rate = input("rate")
+
+
+p = computepay(float(hrs), float(rate))
+print("Pay",p)
