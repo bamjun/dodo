@@ -1,0 +1,12 @@
+fname = input("Enter file name: ")
+if len(fname) < 1 : fname = "mbox-short.txt"
+fh = open(fname)
+do = list()
+n = 0
+for x in fh:
+    x = x.rstrip()
+    if not x.startswith('From') or x.startswith('From:') : continue
+    b = x.split()
+    print(b[1])
+    n = n + 1
+print('There were', n , 'lines in the file with From as the first word')
