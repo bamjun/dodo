@@ -1,0 +1,15 @@
+name = input("Enter file:")
+name = "mbox-short.txt"
+handle = open(name)
+aa = dict()
+for x in handle:
+    bobo = x.split()
+    if not x.startswith("From ") : continue
+    aa[bobo[1]] = aa.get(bobo[1], 0) + 1
+large = None
+larnum = None
+for k,v in aa.items():
+    if larnum is None or larnum < v :
+        large = k
+        larnum = v
+print(large, larnum)
