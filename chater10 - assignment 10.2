@@ -1,0 +1,13 @@
+name = "mbox-short.txt"
+handle = open(name)
+dodo = dict()
+for x in handle:
+    x.rstrip()
+    if not x.startswith("From ") : continue
+    bobo = x.split()
+    nono = bobo[5]
+    nono = nono[:2]
+    dodo[nono] = dodo.get(nono, 0) + 1
+dodo = sorted(dodo.items())
+for k, v in dodo:
+    print(k, v)
